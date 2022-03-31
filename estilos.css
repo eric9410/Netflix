@@ -1,0 +1,414 @@
+:root {
+    --rojo:#E50914;
+    --fondo: #141414;
+}
+
+body{
+    background-color: var(--fondo);
+    font-family: font-family: 'Open Sans', sans-serif;
+}
+.contenedor{
+    width: 90%;
+    margin: auto;
+
+}
+/*solo quiero que el header dentro del contenedor
+ tenga las siguientes propiedades*/
+header .contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logotipo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: var(--rojo);
+    font-size: 35px;
+}
+header nav a{
+    color: #AAA;
+    text-decoration:none; /*quita subrayado*/
+    margin-right: 20px;
+}
+header nav a:hover,
+header nav a.activo {
+    color:#FFF;        
+}
+
+/*La imagen la puse en el contenedor de css 
+no en el Html para no configurar posicionamiento*/
+
+/* Aqui va la parte de pelicula*/
+.pelicula-principal{
+    font-size: 16px;
+    min-height: 40.62em; /* Para diseño responsive use em: 650/16 */
+    color:#FFF;
+    background: linear-gradient(rgba(229, 9, 20,.50) 0%, rgba(0,0,0,.50) 100%), url(cobra3.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 3.12em; /*margen de 50px en em*/
+    display: flex; /* para posicionar mi texto abajo  */
+    align-items:end ;
+}
+.pelicula-principal .contenedor{
+    margin: 0 auto;
+    margin-bottom:6.25em; /*100 pixeles de margen */
+}
+.pelicula-principal .titulo {
+    font-weight: 600;
+    font-size:3.12em; /*50 pixeles de margen */
+    margin-bottom: 0.4em; /*20 pixeles de margen = 3.12*16 */
+}
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%; /**la descripcion solo 
+    va a abarcar la mita de cualquier pantalla*/
+    margin-bottom: 1.25em;/*20px de margen */
+}
+.pelicula-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+	background: #fff;
+	color: #000;
+}
+
+.pelicula-principal .boton i {
+	margin-right: 1.25em;
+}
+.fa-solid {     /*campana y lupa*/
+	color: #fff;
+	font-size: 19px;
+}
+
+/*  Contenedor Titulo y Controles  */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+
+/* Contenedor Principal y Flechas de carousel1*/
+
+.peliculas-recomendadas .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+/* Carousel 1 */
+.peliculas-recomendadas .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover{
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+	width: 100%;
+	vertical-align: top;
+}
+
+/* Contenedor Titulo y Controles  de peliculas Vistas */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+/* Contenedor Principal y Flechas de peliculas Vistas */
+
+.peliculas-vistas .contenedor-principal2 {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.peliculas-vistas .contenedor-principal2 .flecha-izquierda2,
+.peliculas-vistas .contenedor-principal2 .flecha-derecha2 {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.peliculas-vistas .contenedor-principal2 .flecha-izquierda2:hover,
+.peliculas-vistas .contenedor-principal2 .flecha-derecha2:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-vistas .contenedor-principal2 .flecha-izquierda2{
+	left: 0;
+}
+
+.peliculas-vistas .contenedor-principal2 .flecha-derecha2 {
+	right: 0;
+}
+/*  Carousel 2 */
+.peliculas-vistas .contenedor-carousel2{
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-vistas .contenedor-carousel2 .carousel2 {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.peliculas-vistas .contenedor-carousel2 .carousel2 .pelicula2 {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.peliculas-vistas .contenedor-carousel2 .carousel2 .pelicula2.hover{
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-vistas .contenedor-carousel2 .carousel2 .pelicula2 img {
+	width: 100%;
+	vertical-align: top;
+}
+
+/*  Contenedor Titulo y Controles  de peliculas Agregadas*/
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+/* Contenedor Principal y Flechas de peliculas Agregadas */
+
+.peliculas-agregadas .contenedor-principal3 {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.peliculas-agregadas .contenedor-principal3 .flecha-izquierda3,
+.peliculas-agregadas .contenedor-principal3 .flecha-derecha3 {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.peliculas-agregadas .contenedor-principal3 .flecha-izquierda3:hover,
+.peliculas-agregadas .contenedor-principal3 .flecha-derecha3:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-agregadas .contenedor-principal3 .flecha-izquierda3{
+	left: 0;
+}
+
+.peliculas-agregadas .contenedor-principal3 .flecha-derecha3 {
+	right: 0;
+}
+/* Carousel 3*/
+.peliculas-agregadas .contenedor-carousel3{
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-agregadas .contenedor-carousel3 .carousel3 {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.peliculas-agregadas .contenedor-carousel3 .carousel3 .pelicula3 {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.peliculas-agregadas .contenedor-carousel3 .carousel3 .pelicula3.hover{
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-agregadas .contenedor-carousel3 .carousel3 .pelicula3 img {
+	width: 100%;
+	vertical-align: top;
+}
+
+footer a{
+    color: #AAA;
+    text-decoration:none; /*quita subrayado*/
+    margin-right: 20px;
+}
+footer a:hover,
+header nav a.activo {
+    color:#FFF;        
+}
+footer {
+	color: #AAA;
+}
+.preguntas {
+display: grid;
+grid-gap:15px;
+grid-template-columns:repeat(3,1fr);
+grid-template-rows:repeat(3,10px);
+justify-items:center;
+
+}
+
+/* Media Queries*/
+@media screen and (max-width: 800px) {
+    header .logotipo{
+        margin-bottom: 10px;
+        font-size: 30px;
+
+    }
+    header .contenedor{
+        flex-direction: column;
+        text-align: center;
+    }
+    .pelicula-principal{
+        font: size 14px; ;
+    }
+    .pelicula-principal .descripcion{
+        max-width: 100%;
+    }
+    .peliculas-recomendadas .contenedor-carousel {
+		overflow: visible;
+	}
+    .peliculas-recomendadas .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;}
+    
+	.peliculas-recomendadas .indicadores,
+	.peliculas-recomendadas .flecha-izquierda,
+	.peliculas-recomendadas .flecha-derecha {
+		display: none;
+	}
+
+
+    .peliculas-vistas .contenedor-carousel2 {
+		overflow: visible;
+	}
+    .peliculas-vistas .contenedor-carousel2 .carousel2 {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;}
+    
+	.peliculas-vistas .indicadores,
+	.peliculas-vistas .flecha-izquierda2,
+	.peliculas-vistas .flecha-derecha2 {
+		display: none; }
+
+
+
+	.peliculas-agregadas .contenedor-carousel3 {
+		overflow: visible;
+		}
+	.peliculas-agregadas .contenedor-carousel3 .carousel3 {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;}
+		
+	.peliculas-agregadas .indicadores,
+	.peliculas-agregadas .flecha-izquierda3,
+	.peliculas- .flecha-derecha3 {
+		display: none; }
+
+	.preguntas {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+		justify-items:center;
+	}
+		
+
+
+}
